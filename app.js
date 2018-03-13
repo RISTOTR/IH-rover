@@ -85,8 +85,14 @@ function moveForward(rover){
       
     case "N":
     if (rover.y >=1){
+      if (grid[rover.y - 1][rover.x]=== null){
     rover.y -=1, rover.x;
       rover.travelLog.push("["+rover.y,rover.x+"]");
+      }
+      else
+      {
+       console.log("Obstacle!!!Cannot proceed"); 
+    }
     }
     else
     {
@@ -98,8 +104,14 @@ function moveForward(rover){
       
     case "E":
     if (rover.x <=8){
+      if (grid[rover.y][rover.x + 1]=== null){
     rover.x += 1, rover.y;
       rover.travelLog.push("["+rover.y,rover.x+"]");
+      }
+      else
+        {
+          console.log("Obstacle!!!Cannot proceed");
+        }
     }
     else
     {
@@ -107,10 +119,17 @@ function moveForward(rover){
       console.log("DANGER!!! Off the map");
     }
     break;
+      
     case "S":
     if(rover.y <= 8){
+      if (grid[rover.y + 1][rover.x]=== null){
     rover.x, rover.y += 1;
       rover.travelLog.push("["+rover.y,rover.x+"]");
+      }
+      else
+        {
+          console.log("Obstacle!!!Cannot procee");
+    }
     }
     else
     {
@@ -118,10 +137,17 @@ function moveForward(rover){
       console.log("DANGER!!! Off the map");
     }
     break;
+      
     case "W":
     if (rover.x >= 1){
+      if (grid[rover.y][rover.x - 1]=== null){
     rover.x -= 1, rover.y;
       rover.travelLog.push("["+rover.y,rover.x+"]");
+      }
+      else
+        {
+          console.log("Obstacle!!!Cannot proceed");
+        }
     }
     else
     {
@@ -140,24 +166,33 @@ function moveBackward (rover){
       
     case "N":
       if (rover.y <= 8){
-        
-    rover.y += 1, rover.x;
+        if (grid[rover.y + 1][rover.x]=== null){
+        rover.y += 1, rover.x;
       rover.travelLog.push("["+rover.y,rover.x+"]");
+        
       }
-      
+      else
+        {
+          console.log("Obstacle!!!Cannot proceed");
+        }
+      }
       else
     {
       rover.travelLog.push("["+rover.y,rover.x+"]");
       console.log("Danger! Off the map");
     }
-      
-    break;
+        break;
       
     case "E":
       if (rover.x >= 1){
-        if(rover.x)
+        if (grid[rover.y][rover.x - 1]=== null){
     rover.x -= 1, rover.y;
       rover.travelLog.push("["+rover.y,rover.x+"]");
+        }
+        else
+          {
+            console.log("Obstacle!!!Cannot proceed");
+          }
       }
       else
     {
@@ -168,8 +203,14 @@ function moveBackward (rover){
       
     case "S":
       if (rover.y >= 1){
+        if (grid[rover.y - 1][rover.x]=== null){
     rover.x, rover.y -= 1;
       rover.travelLog.push("["+rover.y,rover.x+"]");
+        }
+        else
+          {
+            console.log("Cannot proceed");
+          }
       }
       else
     {
@@ -180,8 +221,14 @@ function moveBackward (rover){
       
     case "W":
       if (rover.x <= 8){
+        if (grid[rover.y][rover.x + 1]=== null){
     rover.x += 1, rover.y;
       rover.travelLog.push("["+rover.y,rover.x+"]");
+        }
+        else
+          {
+            console.log("Obstacle!!!Cannot proceed");
+          }
       }
       else
     {
@@ -219,4 +266,4 @@ function commandList(orders){
   }
 }
 
-//commandList("bbbblllzxhlf");
+//commandList("bbbrrrfffrf");
