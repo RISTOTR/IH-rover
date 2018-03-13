@@ -11,14 +11,14 @@ var rover ={
 var grid = [
   [rover,null,null,null,null,null,null,null,null,null],
   [null,null,null,null,null,null,null,null,null,null],
+  ["S",null,null,null,null,null,null,null,null,null],
+  [null,null,null,null,"S",null,null,null,null,null],
   [null,null,null,null,null,null,null,null,null,null],
-  [null,null,null,null,0,null,null,null,null,null],
+  [null,null,null,null,null,null,"S",null,null,null],
   [null,null,null,null,null,null,null,null,null,null],
-  [null,null,null,null,null,null,0,null,null,null],
+  [null,null,null,"S",null,null,null,null,null,null],
   [null,null,null,null,null,null,null,null,null,null],
-  [null,null,null,0,null,null,null,null,null,null],
-  [null,null,null,null,null,null,null,null,null,null],
-  [null,0,null,null,null,null,null,null,null,null],
+  [null,"S",null,null,null,null,null,null,null,null],
 ];
 
 for (var i = 0; i < grid.length; i++){
